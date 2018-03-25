@@ -62,7 +62,7 @@ class BurgerBuilder extends Component {
         //Implementing Dynamic Cost on Addition of Ingredients
         const priceSubstraction = INGREDIENT_PRICES[type];
         const prevPrice = this.state.totalPrice;
-        const newPrice = prevPrice + priceSubstraction;
+        const newPrice = prevPrice - priceSubstraction;
 
         this.setState({
             totalPrice: newPrice,
@@ -90,6 +90,7 @@ class BurgerBuilder extends Component {
                     disabled={disabledInfo}
                     addIngredient={this.addIngredientHandler}
                     removeIngredient={this.removeIngredientHandler}
+                    burgerPrice={this.state.totalPrice}
                       />
             </Aux>
         );
